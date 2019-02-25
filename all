@@ -1,0 +1,12 @@
+# Grouping
+[NUC1]
+# IP reference
+192.168.1.134
+# Local hosts file reference
+dev-001
+# Create your own alias
+test ansible_host=192.168.1.134
+# Create your alias with port and user to login as
+test2 ansible_host=192.168.1.134 ansible_port=1234 ansible_user=tsserver
+
+ansible_python_interpreter=/usr/bin/python3
