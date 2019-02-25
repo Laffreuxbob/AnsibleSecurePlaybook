@@ -1,0 +1,11 @@
+---
+id: demo-001
+owner:
+  name: Olivier Bricaud
+  trig: OBR
+  email: olivier.bricaud@hoppen.care
+autossh:
+  port: 35410
+network:
+  eth0: dhcp-client
+  ethh0-0: 192.168.1.134
