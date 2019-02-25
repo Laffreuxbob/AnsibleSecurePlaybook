@@ -7,4 +7,11 @@
   - name: Debug
     debug:
        msg: "Debug, Operating system name is : {{ ansible_distribution }}\n{{inventory_hostname}}"
-
+  - name: Install Tree package
+    apt: name=tree
+    become: yes
+    become_user: root
+  - name: Install jq package
+    apt: name=jq
+    become: yes
+    become_user: root
