@@ -1,0 +1,14 @@
+---
+id: dev-001
+owner:
+  name: Olivier Bricaud
+  trig: OBR
+  email: olivire.bricaud@hoppen.care
+autossh:
+  port: 35410
+networdk:
+  eth0: dhcp-client
+  eth0.0: 192.168.1.134
+log:
+  login: tsserver
+  password: tsserver
