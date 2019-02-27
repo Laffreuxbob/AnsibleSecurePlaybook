@@ -1,0 +1,10 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+  - name: Install Tree package
+    apt: name=tree
+    become: yes
+  - name: Install jq package
+    apt: name=jq
+    become: yes
