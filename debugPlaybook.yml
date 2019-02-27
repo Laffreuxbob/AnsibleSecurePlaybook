@@ -1,0 +1,9 @@
+---
+- hosts: NUC1
+  gather_facts: true
+  vars_files:
+  - pass.yml
+  tasks:
+  - name: Debug
+    debug:
+       msg: "Debug, Operating system name is : {{ ansible_distribution }}\n{{inventory_hostname}}"
