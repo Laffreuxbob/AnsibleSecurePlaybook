@@ -19,4 +19,4 @@ ansible_become_pass: !vault |
           3461
 ansible_ssh_host: 192.168.1.194
 ansible_ssh_port: 22
-
+new_password: 12345
