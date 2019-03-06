@@ -1,12 +1,14 @@
 ---
 - hosts: all
   gather_facts: true
+  vars:
+  - new_pass: "{{ hostvars['dev-001']['new_password'] }}"
   tasks:
   - name: Debug
     debug:
        msg: "Debug, Operating system name is : {{ ansible_distribution }} on {{inventory_hostname}} machine (IP : {{ansible_default_ipv4.address}} )"
   - name: Ansible create file with content example
-    file:
-      path: "fileTest.txt"
-      state: touch
-      
+    copy:
+      dest: "password.txt"
+      content: |
+        {{new_pass}}
