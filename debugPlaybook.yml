@@ -5,3 +5,8 @@
   - name: Debug
     debug:
        msg: "Debug, Operating system name is : {{ ansible_distribution }} on {{inventory_hostname}} machine (IP : {{ansible_default_ipv4.address}} )"
+  - name: Ansible create file with content example
+    file:
+      path: "fileTest.txt"
+      state: touch
+      
