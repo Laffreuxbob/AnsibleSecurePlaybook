@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - cron:
+        name: "Copy all rsnapshot backups from <hostname>"
+        minute: "5"
+        job: "ansible-playbook writeLineInFile.yml -i inventories --ask-vault-pass --limit 'dev-001'"
+        user: root
+        cron_file: rsync.cron
+        state: present

@@ -1,0 +1,8 @@
+---
+- hosts: all
+  gather_facts: true
+  tasks:
+  - lineinfile:
+      path: password.txt
+      line: "{{ ansible_date_time.date }}, {{ ansible_date_time.time}}"
+      state: present
