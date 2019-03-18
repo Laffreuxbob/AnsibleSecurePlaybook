@@ -1,14 +1,18 @@
 ---
 - hosts: all
   gather_facts: true
-  vars:
-  - new_pass: "{{ hostvars['dev-001']['new_password'] }}"
   tasks:
   - name: Debug
     debug:
        msg: "The current date is {{ ansible_date_time.date }}, Operating system name is : {{ ansible_distribution }} on {{inventory_hostname}} machine (IP : {{ansible_default_ipv4.address}} )"
-  - name: Ansible create file with content example
-    copy:
-      dest: "password.txt"
-      content: |
-        {{new_pass}}
+  - name: Get current user
+    become: false
+    local_action: command whoami
+    register: username_on_the_host
+  - name: Register password update
+    lineinfile:
+      path: password.txt
+      line: "Password Update : {{ ansible_date_time.date }} {{ ansible_date_time.time}} {{username_on_the_host.stdout}}"
+  - name: Read file
+    debug: 
+      msg: "{{lookup('file', '/home/masteransible/password.txt') }}"
