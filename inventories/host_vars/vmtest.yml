@@ -1,0 +1,16 @@
+---
+id: vmtest
+owner:
+  name: Olivier Bricaud
+  trig: OBR
+  email: olivier.bricaud@hoppen.care
+autossh:
+   port: 35410
+network:
+   eth0: dhcp_client 
+   eth0.0: 192.168.1.186
+ansible_user: masteransible
+ansible_become_pass: masteransible
+ansible_ssh_host: 192.168.1.186
+ansible_ssh_port: 22
+
